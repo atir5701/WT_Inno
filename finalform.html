@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Form</title>
+    <link rel="stylesheet" href="finalform.css" />
+    <script
+      src="https://kit.fontawesome.com/64d58efce2.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div class="container">
+      <span class="big-circle"></span>
+      <img src="img/shape.png" class="square" alt="" />
+      <div class="form">
+        <div class="contact-info">
+          <h3 class="title">Let's get in touch</h3>
+          <p class="text">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe
+            dolorum adipisci recusandae praesentium dicta!
+          </p>
+
+          <div class="info">
+            <div class="information">
+              <img src="img/location.png" class="icon" alt="" />
+              <p>Gurukul Road Ahmedabad 380054</p>
+            </div>
+            <div class="information">
+              <img src="img/email.png" class="icon" alt="" />
+              <p>lorem@ipsum.com</p>
+            </div>
+            <div class="information">
+              <img src="img/phone.png" class="icon" alt="" />
+              <p>9145-456-7893</p>
+            </div>
+          </div>
+
+          <div class="social-media">
+            <p>Connect with us :</p>
+            <div class="social-icons">
+              <a href="#">
+                <i class="fab fa-facebook-f"></i>
+              </a>
+              <a href="#">
+                <i class="fab fa-twitter"></i>
+              </a>
+              <a href="#">
+                <i class="fab fa-instagram"></i>
+              </a>
+              <a href="#">
+                <i class="fab fa-linkedin-in"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-form">
+          <span class="circle one"></span>
+          <span class="circle two"></span>
+
+          <form action="index.html" autocomplete="off">
+            <h3 class="title">Contact us</h3>
+            <div class="input-container">
+              <input type="text" name="name" value="USERNAME" class="input" id="name" />
+              <span>Username</span>
+            </div>
+            <div class="input-container">
+              <input type="email" name="email" value="EMAIL" class="input" id="email"/>
+              <span>Email</span>
+            </div>
+            <div class="input-container">
+              <input type="tel" name="phone" value="PHONE NUMBER" class="input" id="phno"/>
+              <span>Phone</span>
+            </div>
+            <div class="input-container textarea">
+              <textarea name="message" class="input" value="MESSAGE" id="tbox">ANY SPECIAL MESSAGE?</textarea>
+              <span>Message</span>
+            </div>
+             <button onclick="addDraft()" >SEND DETAILS!</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+<script>
+    if (window.openDatabase){
+    var dbs = openDatabase("Testdb", "0.1", "Testing  Database", 1024 * 1024);
+     dbs.transaction(function(t){
+      t.executeSql("CREATE TABLE IF NOT EXISTS dbs (id INTEGER PRIMARY KEY, name1 VARCHAR(50) ,email1 VARCHAR(50),phno1 VARCHAR(50),tbox1 VARCHAR(50))");
+});
+}else{
+alert("WebSQL is not supported by your browser!");
+}
+
+
+
+function addDraft() {
+if (dbs) {
+    var email1= document.getElementById("email").value;
+    var phno1= document.getElementById("phno").value;
+    var name1= document.getElementById("name").value;
+    var tbox1= document.getElementById("tbox").value;
+    if (email1 !== "" && phno1!=="" && name1!=="" && tbox1!=="") {
+        dbs.transaction(function(t) {
+            t.executeSql("INSERT INTO dbs (name1,email1,phno1,tbox1) VALUES (?,?,?,?)", [name1,email1,phno1,tbox1]);
+        });
+        document.getElementById('name').value = " ";
+        document.getElementById('tbox').value = " ";
+        document.getElementById('phno').value = " ";
+        document.getElementById('email').value = " ";
+    } else {
+        alert("You must enter your email!");
+    }
+} else {
+    alert("db not found");
+}
+}
+</script>
+  </body>
+</html>

@@ -1,0 +1,177 @@
+<html>
+    <head>
+
+        <script>
+                function validateForm(){
+    var email=String(document.getElementById("email").value);
+    var password=String(document.getElementById("pas").value);
+    var pa=String(document.getElementById("conf").value);
+    var reg=new RegExp("[^a-z A-Z]+");
+    var reg1=/^[0-9]$/;
+    var reg2=/^[a-zA-Z]+$/;
+    let n=password.length;
+
+    if(email.indexOf('@')<=0){
+        alert("Invalid Email");
+        return false;
+        
+    }
+    if((email.charAt(email.length-4)!='.') && (email.charAt(email.length-3)!='.')){
+        alert("Invalid Email");
+        return false;
+    } 
+    if(String(password) != String(pa)){
+       
+       alert("Passwrod and Comfirm Password are different");
+       return false;
+   }
+  
+    if(n < 8){
+        alert("Password must be of atleast 8 characters");
+        return false;
+    }else{
+        var r1=/[a-z]/;
+        var r2=/[A-Z]/;
+        var r3=/[0-9]/;
+        let n = password.search(r1);
+        let n1 = password.search(r2);
+        let n2 = password.search(r3);
+        if (n1 == -1 || n2 == -1 || n3==-1){
+            alert("Password should have lowercase ,uppercase and digits");
+            return false;
+        }
+    }
+
+    
+}
+                  
+
+
+        </script>
+        <style>
+            body {
+                background-image:aqua;
+                
+            }
+           
+        </style>
+    </head>
+   
+    <body style="margin-left:auto;margin-right:auto;width:80%;background-image:url('https://img.freepik.com/free-photo/abstract-luxury-blur-dark-grey-black-gradient-used-as-background-studio-wall-display-your-products-plain-studio-background_1258-54444.jpg?size=626&ext=jpg&ga=GA1.1.1425700622.1651468752'); background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 100%;;color:black;">
+        <br>
+        <h1 style="text-align: center"><b><u>PATIENT INFORMATION</u></b></h1>
+       <br>
+   
+       <form  name="student" target="_blank" method="post" autocomplete="off" onsubmit="return validateForm()" action="Submit.html">
+   
+        <h2 style="text-align: center"><b><u>Personal Details</u></b></h3>
+            <br><br>
+   
+            <label for="name"><b>First Name :</b></label>
+           <input type="text" name="fname" id="name" size="25" autofocus>
+           &nbsp;&nbsp;&nbsp;
+            <br><br>
+           <label for="mname"><b>Middle Name :</b></label> 
+            <input type="text" name="nmane" id="mname" size="25">
+            &nbsp;&nbsp;&nbsp;
+            <br><br>
+            <label for="lname"><b>Last Name : </b></label>
+            <input type="text" name="lname" id="lname" size="25">
+            <br><br>
+   
+            <label for="email"><b>Email id : </b></label>
+            &nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="email" id="email" size="25" >
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+   
+            <label for="phonenumber"><b>Phone Number : </b></label>
+            <input type="text" name="phonenumber" id="phonenumber" size="25" maxlength="10"s>
+            <br><br>
+   
+            <label for="dob"><b>Birthday : </b></label>
+            <input type="date" name="dob" id="dob">
+            <br><br> 
+   
+            <label for="gen"><b>Gender : </b></label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input type="radio" id="gen" name="gen" value="Male">
+            &nbsp;&nbsp;Male
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+   
+            <input type="radio" id="gen" name="gen" value="Female">
+            &nbsp;&nbsp;Female
+            <br><br>
+   
+            <b>Medical Issue : </b>
+            <br><br>
+            <textarea name="message" rows="5" cols="80"></textarea>
+            <br><br>
+   
+            <label for="state"><b>State : </b></label>
+            <input list="state">
+            <datalist id="state">
+                <option value="Andhra Pradesh">Andhra Pradesh</option>
+                <option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
+                <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+                <option value="Assam">Assam</option>
+                <option value="Bihar">Bihar</option>
+                <option value="Chandigarh">Chandigarh</option>
+                <option value="Chhattisgarh">Chhattisgarh</option>
+                <option value="Dadar and Nagar Haveli">Dadar and Nagar Haveli</option>
+                <option value="Daman and Diu">Daman and Diu</option>
+                <option value="Delhi">Delhi</option>
+                <option value="Lakshadweep">Lakshadweep</option>
+                <option value="Puducherry">Puducherry</option>
+                <option value="Goa">Goa</option>
+                <option value="Gujarat">Gujarat</option>
+                <option value="Haryana">Haryana</option>
+                <option value="Himachal Pradesh">Himachal Pradesh</option>
+                <option value="Jammu and Kashmir">Jammu and Kashmir</option>
+                <option value="Jharkhand">Jharkhand</option>
+                <option value="Karnataka">Karnataka</option>
+                <option value="Kerala">Kerala</option>
+                <option value="Madhya Pradesh">Madhya Pradesh</option>
+                <option value="Maharashtra">Maharashtra</option>
+                <option value="Manipur">Manipur</option>
+                <option value="Meghalaya">Meghalaya</option>
+                <option value="Mizoram">Mizoram</option>
+                <option value="Nagaland">Nagaland</option>
+                <option value="Odisha">Odisha</option>
+                <option value="Punjab">Punjab</option>
+                <option value="Rajasthan">Rajasthan</option>
+                <option value="Sikkim">Sikkim</option>
+                <option value="Tamil Nadu">Tamil Nadu</option>
+                <option value="Telangana">Telangana</option>
+                <option value="Tripura">Tripura</option>
+                <option value="Uttar Pradesh">Uttar Pradesh</option>
+                <option value="Uttarakhand">Uttarakhand</option>
+                <option value="West Bengal">West Bengal</option>
+            </datalist>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+   
+            <label for="pincode"><b>Pincode : </b></label>
+            <input type="text" id="pincode" name="pincode" maxlength="6" placeholder="380059">
+            <br><br><br>
+   
+   
+            <br><br><br>
+   
+   
+            <br><br>
+   
+            <fieldset>
+   
+            <label for="f9"><b>Aadhar Card/Pan Card/Driving License/Passport : </b></label>
+            <input type="file" id="f9" name="f9" align="right"> <br><br>
+   
+            <label for="f10"><b>Photo : </b></label>
+            <input type="file" id="f10" name="f10" align="right"> <br><br><br><br>
+         
+            </fieldset>
+            <br><br>
+<center>        <input type="submit"  value="Submit">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <input type="reset" onclick="alert('Form Reset Successful')" value="Reset">
+            </center>
+    </form>
+    </body>
+</html>

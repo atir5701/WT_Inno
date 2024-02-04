@@ -1,0 +1,47 @@
+div.head
+{
+
+    padding: 50px;
+    background: white;
+    border:15px solid black;
+    color:black;
+    text-align: center;
+    font-size: 35px;
+    
+    font-family:"Copperplate","Papyrus","Fantasy";
+    transition: 4s;
+}
+div.head:hover {
+    
+    background:black;
+    text-align: center;
+    font-size: x-large;
+    color:white;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+  }
+
+  div.para
+{
+    float:left; 
+    padding: 50px;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: x-large;
+    background-color: white;
+    color:black;
+    transition: 4s;
+}
+div.para:hover
+{
+    float: left;
+    padding: 50px;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: x-large;
+    background-color:black;
+    color:black;
+   
+    border-style: dotted;
+    border:5px solid black;
+
+
+
+}
